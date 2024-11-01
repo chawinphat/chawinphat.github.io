@@ -1,3 +1,21 @@
+/* Load Alliance No.1 font with Light and Regular weights */
+@font-face {
+    font-family: 'Alliance No.1';
+    src: url('resources/fonts/AllianceNo1-Light.woff2') format('woff2'),
+         url('resources/fonts/AllianceNo1-Light.woff') format('woff');
+    font-weight: 300; /* Light weight */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alliance No.1';
+    src: url('resources/fonts/AllianceNo1-Regular.woff2') format('woff2'),
+         url('resources/fonts/AllianceNo1-Regular.woff') format('woff');
+    font-weight: 400; /* Regular weight */
+    font-style: normal;
+}
+
+/* Global styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,13 +23,14 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+    font-family: 'Alliance No.1', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #333;
     background-color: #fff;
     padding: 20px;
     max-width: 90%;
     margin: auto;
     font-size: 1.1em; /* Unified font size */
+    font-weight: 400; /* Regular weight as default */
 }
 
 header {
@@ -20,13 +39,13 @@ header {
 }
 
 header h1 {
-    font-size: 1.2em; /* Same font size as the rest of the text */
+    font-weight: 400; /* Regular weight for main header */
     color: #000;
     margin-bottom: 0.1em;
 }
 
 header p {
-    font-size: 1.2em; /* Same font size */
+    font-weight: 300; /* Light weight for subtle emphasis */
     color: #555;
     font-style: italic;
     margin-top: 0.2em;
@@ -41,12 +60,11 @@ header p {
 }
 
 .section-title h2 {
-    font-size: 1.2em; /* Same font size */
+    font-weight: 400; /* Regular weight for section titles */
     color: #000;
     margin: 0;
     text-align: left;
-    padding-right: 0;
-    align-self: center; /* Vertically align with the first experience item */
+    align-self: center;
 }
 
 .section-content {
@@ -58,20 +76,20 @@ header p {
 }
 
 .experience-item h3, .research-item h3 {
-    font-size: 1.2em; /* Same font size */
+    font-weight: 400; /* Regular weight for experience titles */
     color: #111;
     margin-top: 0;
 }
 
 h4 {
-    font-size: 1.2em; /* Same font size */
+    font-weight: 300; /* Light weight for subheadings */
     color: #444;
     margin-top: 5px;
-    font-weight: normal;
+    font-style: normal;
 }
 
 p {
-    font-size: 1.2em; /* Same font size */
+    font-weight: 300; /* Light weight for body text */
     color: #333;
     margin-top: 5px;
     line-height: 1.6;
@@ -80,7 +98,7 @@ p {
 ul {
     list-style-type: disc;
     padding-left: 20px;
-    font-size: 1.2em; /* Same font size */
+    font-weight: 300; /* Light weight for list items */
     color: #333;
 }
 
@@ -100,19 +118,20 @@ ul li {
     height: 1px;
     background: #333;
     margin: 30px 0;
-    width: 100%; /* Full width */
+    width: 100%;
     margin-left: 0;
 }
 
 footer {
     text-align: center;
-    padding: 15px 0;
-    font-size: 1.2em; /* Same font size */
+    font-weight: 300; /* Light weight for footer text */
     color: #555;
     border-top: 1px solid #333;
     margin-top: 20px;
+    padding: 15px 0;
 }
 
+/* Responsive adjustments */
 @media (max-width: 600px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -120,6 +139,5 @@ footer {
     
     .section-title h2 {
         text-align: left;
-        padding-right: 0;
     }
 }
