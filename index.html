@@ -1,77 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe's Resume</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Doe — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('resources/fonts/AllianceNo1-Light.woff2') format('woff2'),
+           url('resources/fonts/AllianceNo1-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('resources/fonts/AllianceNo1-Regular.woff2') format('woff2'),
+           url('resources/fonts/AllianceNo1-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    /* Thin scrollbar styling */
+    html { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.3) transparent; }
+    body::-webkit-scrollbar { width: 6px; }
+    body::-webkit-scrollbar-track { background: transparent; }
+    body::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.3); border-radius: 3px; }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>John Doe</h1>
-        <p>Senior in Computer Science at Berkeley</p>
-    </header>
+<body class="bg-white text-gray-800 antialiased flex justify-center pt-8" style="font-family: 'Alliance No.1', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
 
-    <main class="content-grid">
-        <div class="divider category-divider"></div>
-        <!-- Professional Experience Section -->
-        <div class="section-title">
-            <h2>Professional Experience</h2>
-        </div>
-        <div class="section-content">
-            <div class="experience-item">
-                <h3>Software Engineer Intern</h3>
-                <h4>Company Name, Location</h4>
-                <p>June 2023 - August 2023</p>
-                <p>Developed a communication protocol for state machine replication using TCP ACKs, designed experiments, and benchmarked solutions against industry standards.</p>
-            </div>
-            <div class="divider experience-divider"></div>
-            <div class="experience-item">
-                <h3>Data Engineering Intern</h3>
-                <h4>Another Company, Location</h4>
-                <p>June 2022 - August 2022</p>
-                <p>Assisted in building a data pipeline with Databricks for data transformation, enabling faster analytics and insights across the organization.</p>
-            </div>
-            <div class="divider experience-divider"></div>
-            <div class="experience-item">
-                <h3>Software Developer</h3>
-                <h4>Freelance, Remote</h4>
-                <p>September 2021 - May 2022</p>
-                <p>Worked on a variety of web development projects using React and Node.js for clients in e-commerce and education sectors.</p>
-            </div>
-        </div>
-        <div class="divider category-divider"></div>
+  <div class="flex min-h-screen w-3/5">
+    <!-- Left Panel -->
+    <aside class="w-1/4 bg-white border-r border-gray-300 p-8 flex flex-col">
+      <h1 class="text-4xl font-normal text-black mb-2">John Doe</h1>
+      <p class="text-base font-light text-gray-500 italic mb-6">Senior in Computer Science at Berkeley</p>
+      <nav class="flex flex-col space-y-4">
+        <a href="#experience" class="text-base font-light uppercase hover:underline">Experience</a>
+        <a href="#research" class="text-base font-light uppercase hover:underline">Research</a>
+        <a href="#skills" class="text-base font-light uppercase hover:underline">Skills</a>
+      </nav>
+    </aside>
 
-        <!-- Research Section -->
-        <div class="section-title">
-            <h2>Research</h2>
-        </div>
-        <div class="section-content">
-            <div class="research-item">
-                <h3>Distributed Systems Research</h3>
-                <h4>Sky Computing Lab, Berkeley</h4>
-                <p>Conducted research on optimizing protocols for distributed systems and data center networking models.</p>
+    <!-- Right Panel -->
+    <main class="flex-1 p-8">
+      <!-- Experience Section -->
+      <section id="experience" class="mb-12">
+        <div class="space-y-12">
+          <!-- First Entry with Section Label -->
+          <div class="grid grid-cols-3 gap-x-8 items-start">
+            <div>
+              <p class="text-base font-light uppercase text-gray-700">Professional Experience</p>
             </div>
-            <div class="divider experience-divider"></div>
-            <div class="research-item">
-                <h3>Cloud Computing Optimization</h3>
-                <h4>Research Group, Berkeley</h4>
-                <p>Developed methods to reduce latency in cloud-based applications, enhancing performance in real-time processing scenarios.</p>
+            <div>
+              <h3 class="text-xl font-normal text-gray-900">Software Engineer Intern</h3>
+              <h4 class="text-base font-light text-gray-700">Company Name, Location</h4>
+              <p class="text-sm font-light text-gray-600">June 2023 – August 2023</p>
             </div>
+            <div>
+              <p class="text-base font-light leading-relaxed">
+                Developed a communication protocol for state machine replication using TCP ACKs, designed experiments, and benchmarked solutions against industry standards.
+              </p>
+            </div>
+          </div>
+          <!-- Subsequent Entries without Label -->
+          <div class="grid grid-cols-3 gap-x-8 items-start">
+            <div></div>
+            <div>
+              <h3 class="text-xl font-normal text-gray-900">Data Engineering Intern</h3>
+              <h4 class="text-base font-light text-gray-700">Another Company, Location</h4>
+              <p class="text-sm font-light text-gray-600">June 2022 – August 2022</p>
+            </div>
+            <div>
+              <p class="text-base font-light leading-relaxed">
+                Assisted in building a data pipeline with Databricks for data transformation, enabling faster analytics and insights across the organization.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-x-8 items-start">
+            <div></div>
+            <div>
+              <h3 class="text-xl font-normal text-gray-900">Software Developer</h3>
+              <h4 class="text-base font-light text-gray-700">Freelance, Remote</h4>
+              <p class="text-sm font-light text-gray-600">September 2021 – May 2022</p>
+            </div>
+            <div>
+              <p class="text-base font-light leading-relaxed">
+                Worked on a variety of web development projects using React and Node.js for clients in e-commerce and education sectors.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="divider category-divider"></div>
+      </section>
 
-        <!-- Skills Section -->
-        <div class="section-title">
-            <h2>Skills</h2>
+      <!-- Research Section -->
+      <section id="research" class="mb-12">
+        <div class="space-y-12">
+          <div class="grid grid-cols-3 gap-x-8 items-start">
+            <div>
+              <p class="text-base font-light uppercase text-gray-700">Research</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-normal text-gray-900">Distributed Systems Research</h3>
+              <h4 class="text-base font-light text-gray-700">Sky Computing Lab, Berkeley</h4>
+            </div>
+            <div>
+              <p class="text-base font-light leading-relaxed">
+                Conducted research on optimizing protocols for distributed systems and data center networking models.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-x-8 items-start">
+            <div></div>
+            <div>
+              <h3 class="text-xl font-normal text-gray-900">Cloud Computing Optimization</h3>
+              <h4 class="text-base font-light text-gray-700">Research Group, Berkeley</h4>
+            </div>
+            <div>
+              <p class="text-base font-light leading-relaxed">
+                Developed methods to reduce latency in cloud-based applications, enhancing performance in real-time processing scenarios.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="section-content">
-            <ul>
-                <li>JavaScript, Python, React, Node.js, SQL</li>
-                <li>Data governance, TCP ACKs, Docker, multi-architecture compatibility</li>
-                <li>AWS OpenSearch, Databricks, data center networking models</li>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <div class="grid grid-cols-3 gap-x-8 items-start">
+          <div>
+            <p class="text-base font-light uppercase text-gray-700">Skills</p>
+          </div>
+          <div class="col-span-2">
+            <ul class="list-disc list-inside space-y-2 text-base font-light text-gray-800">
+              <li>JavaScript, Python, React, Node.js, SQL</li>
+              <li>Data governance, TCP ACKs, Docker, multi-architecture compatibility</li>
+              <li>AWS OpenSearch, Databricks, data center networking models</li>
             </ul>
+          </div>
         </div>
+      </section>
     </main>
+  </div>
+
 </body>
 </html>
